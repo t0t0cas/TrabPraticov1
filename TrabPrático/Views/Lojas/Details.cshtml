@@ -1,0 +1,47 @@
+﻿@model TrabPrático.Models.Loja
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Loja</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            <a>Nome da Loja</a>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            <a>Nome do Jogo</a>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Jogo.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Link)
+        </dt>
+        <dd class="col-sm-10">
+            <a href="@Html.DisplayFor(model => model.Link)">@Html.DisplayFor(model => model.Link)</a>
+        </dd>
+        <dt class="col-sm-2">
+            <a>Logo da Loja</a>
+</dt>
+        <dd class="col-sm-10">
+            <a href="@Html.DisplayFor(model => model.Link)">
+                <img src="~/fotoloja/@Html.DisplayFor(model => model.ImagemLoja) "
+                     width="150"
+                     alt="Fotografia do @Html.DisplayFor(model => model.Nome)"
+                     title="@Html.DisplayFor(model => model.Nome)" />
+            </a>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdLoja">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

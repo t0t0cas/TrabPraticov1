@@ -1,0 +1,23 @@
+﻿@model IEnumerable<TrabPrático.Models.Jogos>
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+<head>
+    <link rel="stylesheet" href="~/css/ImagensJogos.css" />
+</head>
+<h1 style="text-align:center">Lista de Jogos</h1>
+@foreach (var item in Model)
+{
+    <div class="Jogo">
+        <a asp-action="Details" asp-route-id="@item.IdJogo">
+            <img class="ImagemJogo" src="~/fotosjogos/@Html.DisplayFor(modelItem => item.Imagem)" />
+            <div class="overlay">
+                <div class="text">
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </div>
+            </div>
+        </a>
+    </div>
+}
